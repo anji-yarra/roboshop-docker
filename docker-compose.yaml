@@ -19,7 +19,7 @@ services:
     depends_on:
       - catalogue
       - user
-      # - cart
+      - cart
       # - shipping
       # - payment
   user:
@@ -38,9 +38,9 @@ services:
     image: cart:v1
     container_name: cart
     environment:
-      - REDIS_HOST: redis
-      - CATALOGUE_HOST: catalogue
-      - CATALOGUE_PORT: 8080
+      REDIS_HOST: redis
+      CATALOGUE_HOST: catalogue
+      CATALOGUE_PORT: 8080
     depends_on:
       - redis
       - catalogue
