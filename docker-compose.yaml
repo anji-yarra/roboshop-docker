@@ -27,7 +27,7 @@ services:
     image: user:v1
     container_name: user
     environment:
-      - MONGO_URL="mongodb://mongodb:27017/user"
+      - MONGO_URL=mongodb://mongodb:27017/user
       - MONGO=true
       - REDIS_URL=redis://redis:6379
     depends_on:
