@@ -29,10 +29,10 @@ services:
     environment:
       - MONGO_URL="mongodb://mongodb:27017/user"
       - MONGO=true
-      #- REDIS_URL="redis://redis:6379"
+      - REDIS_URL="redis://redis:6379"
     depends_on:
       - mongodb
-      #- redis
+      - redis
   # cart:
   #   build: ./cart
   #   image: cart:v1
@@ -70,16 +70,16 @@ services:
   #     - cart
   #     - user
   #     - rabbitmq
-  # redis:
-  #   image: redis:7.0
-  #   container_name: redis
-  # mysql:
-  #   image: mysql:v1
-  #   build: ./mysql
-  #   container_name: mysql
-  #   command: --mysql-native-password=ON --innodb-lock_wait-timeout=120
-  #   environment:
-  #     - MYSQL_ROOT_PASSWORD: "RoboShop@1"
+  redis:
+    image: redis:7.0
+    container_name: redis
+  mysql:
+    image: mysql:v1
+    build: ./mysql
+    container_name: mysql
+    command: --mysql-native-password=ON --innodb-lock_wait-timeout=120
+    environment:
+      - MYSQL_ROOT_PASSWORD: "RoboShop@1"
   # rabbitmq:
   #   image: rabbitmq:3
   #   container_name: rabbitmq
