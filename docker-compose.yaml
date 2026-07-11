@@ -18,10 +18,10 @@ services:
       - "80:80"
     depends_on:
       - catalogue
-      - user
-      - cart
-      - shipping
-      - payment
+      # - user
+      # - cart
+      # - shipping
+      # - payment
   # user:
   #   build: ./user
   #   image: user:v1
