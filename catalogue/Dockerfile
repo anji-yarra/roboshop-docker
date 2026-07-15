@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json .
 COPY server.js .
 RUN npm install
-CMD ["node", "server.js"]
+
 
 
 FROM node:20.20.2-alpine3.22
